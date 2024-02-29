@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-int	ft_printf(char const *, ...);
+
+int	ft_printf(char const *str, ...);
 
 #endif

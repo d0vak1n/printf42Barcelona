@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libprintf.h"
-/*
-int	ft_printf(char const *, ...)
+
+int	ft_printf(char const *str, ...)
 {
+
 }
-*/
