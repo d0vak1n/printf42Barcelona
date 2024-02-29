@@ -39,11 +39,13 @@ makelibft:
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@cd $(LIBFTPATH) && make clean
 	@echo "\n 🗑 All .o deleted 🗑\n"
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@cd $(LIBFTPATH) && make fclean
 	@echo "\n 🗑 All .a deleted 🗑\n"
 
 re: fclean all
