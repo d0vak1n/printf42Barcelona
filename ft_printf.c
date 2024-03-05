@@ -13,5 +13,7 @@
 
 int	ft_printf(char const *str, ...)
 {
+	va_list args;
+	va_start(args, str);
 
 }
