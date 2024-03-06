@@ -18,7 +18,7 @@ LIBFT=libft.a
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror
 
-FILES=ft_printf.c
+FILES=ft_printf.c ft_putchar_pf.c
 LIBFTPATH=./libft
 
 OBJS=$(patsubst %.c, %.o, $(FILES))
@@ -36,7 +36,14 @@ makelibft:
 	@mv $(LIBFT) $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $^ -o $@
+	$(CC) $(CFLAGS) -c $<
+
+test: $(OBJS) test.c $(NAME)
+	@echo "\n ❗️❗️ Compiling all the files... ❗️❗️ \n"
+	$(CC) $(CFLAGS) $@.c $(OBJS) $(NAME) -o $@
+	@make clean
+	@echo "\n 🐁 Executing test... 🐁 \n"
+	@./$@
 
 clean:
 	@rm -f $(OBJS)
@@ -53,4 +60,4 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
-## @ left, ? right
+## @ left, $^ right
