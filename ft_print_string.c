@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramoreno <ramoreno@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 12:25:17 by ramoreno          #+#    #+#             */
-/*   Updated: 2024/02/29 12:31:10 by ramoreno         ###   ########.fr       */
+/*   Created: 2024/03/12 12:12:24 by ramoreno          #+#    #+#             */
+/*   Updated: 2024/03/12 12:13:58 by ramoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include "./libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include <stdarg.h>
+int	ft_print_string(char *str)
+{
+	int	len;
+	int	i;
+	int	err;
 
-int	ft_printf(char const *str, ...);
-int	ft_print_char(char const c);
-int	ft_print_string(char *str);
-
-#endif
+	i = -1;
+	len = 0;
+	if (!str)
+	{
+		ft_putstr_fd("(null)", 1);
+		return (6);
+	}
+	while (str[++i])
+	{
+		err = 0;
+		err += ft_print_char(str[i]);
+		if (err == -1)
+			return (-1);
+		else
+			len += err;
+	}
+	return (len);
+}
