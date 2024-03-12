@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramoreno <ramoreno@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 12:25:17 by ramoreno          #+#    #+#             */
-/*   Updated: 2024/02/29 12:31:10 by ramoreno         ###   ########.fr       */
+/*   Created: 2024/03/12 12:49:48 by ramoreno          #+#    #+#             */
+/*   Updated: 2024/03/12 12:50:54 by ramoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include "./libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include <stdarg.h>
 
-int	ft_printf(char const *str, ...);
-int	ft_print_char(char const c);
-int	ft_print_string(char *str);
-int	ft_print_pointer(unsigned long p);
+static char	*_create_str(unsigned long p)
+{
 
-#endif
+}
+
+int	ft_print_pointer(unsigned long p)
+{
+	int	div;
+	int	rest;
+	char *hex;
+
+	hex = "0123456789abcdef";
+
+	if (p < 16)
+	{
+		p /= 16;
+		rest = p % 16;
+		ft_print_pointer(rest);
+	}
+	else
+		ft_print_char(hex[p]);
+}
+

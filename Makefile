@@ -18,7 +18,7 @@ LIBFT=libft.a
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror
 
-FILES=ft_printf.c ft_print_char.c ft_print_string.c
+FILES=ft_printf.c ft_print_char.c ft_print_string.c ft_print_pointer.c
 LIBFTPATH=./libft
 
 OBJS=$(patsubst %.c, %.o, $(FILES))
