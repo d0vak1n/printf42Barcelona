@@ -11,21 +11,21 @@
 # **************************************************************************** #
 
 ## Names
-NAME=libprintf.a
+NAME=libftprintf.a
 LIBFT=libft.a
 
 ## Compile command
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror
 
-FILES=ft_printf.c ft_putchar_pf.c
+FILES=ft_printf.c ft_print_char.c
 LIBFTPATH=./libft
 
 OBJS=$(patsubst %.c, %.o, $(FILES))
 
-$(NAME): $(OBJS) Makefile libprintf.h makelibft
+$(NAME): $(OBJS) Makefile ft_printf.h makelibft
 	@echo "\n📝 Creating library... $(NAME) 📝\n"
-	ar -rvs $@ $<
+	ar -rvs $@ $(OBJS)
 	@echo "\n📖 $(NAME) created succesfully 📖\n"
 
 all: $(NAME)
@@ -40,7 +40,7 @@ makelibft:
 
 test: $(OBJS) test.c $(NAME)
 	@echo "\n ❗️❗️ Compiling all the files... ❗️❗️ \n"
-	$(CC) $(CFLAGS) $@.c $(OBJS) $(NAME) -o $@
+	$(CC) $(CFLAGS) -g $@.c $(OBJS) $(NAME) -o $@
 	@make clean
 	@echo "\n 🐁 Executing test... 🐁 \n"
 	@./$@

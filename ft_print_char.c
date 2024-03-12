@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_pf.c                                    :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramoreno <ramoreno@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,9 +9,9 @@
 /*   Updated: 2024/03/06 10:38:17 by ramoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libprintf.h"
+#include "ft_printf.h"
 
-int	ft_putchar_pf(char const c)
+int	ft_print_char(char c)
 {
 	int	len;
 
@@ -19,5 +19,5 @@ int	ft_putchar_pf(char const c)
 	if (len == -1)
 		return (-1);
 	else
-		return len;
+		return (len);
 }

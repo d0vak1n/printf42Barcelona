@@ -9,7 +9,7 @@
 /*   Updated: 2024/02/29 12:40:41 by ramoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libprintf.h"
+#include "ft_printf.h"
 
 static int	_format(char const *str, void *arg)
 {
@@ -17,32 +17,32 @@ static int	_format(char const *str, void *arg)
 
 	numchars = 0;
 	if (*str == 'c')
-		numchars += ft_putchar_pf((char)arg);
+		numchars += ft_print_char((int)arg);
 	return (numchars);
 }
 
 int	ft_printf(char const *str, ...)
 {
 	va_list	args;
-	int numchars;
-	int	i;
+	int		numchars;
+	int		i;
 
 	i = -1;
 	numchars = 0;
 	va_start(args, str);
 	while (str[++i])
 	{
-		if (str[i++] == '%')
+		if (str[i] == '%')
 		{
-			if (ft_strchr("cspdiuxX", str[i]))
-				numchars += _format(&str[i], va_arg(args,  void *));
-			else if (str[i] == '%')
-				numchars += ft_putchar_pf('%');
+			if (ft_strchr("cspdiuxX", str[i + 1]))
+				numchars += _format(&str[i + 1], va_arg(args, void *));
+			else if (str[i + 1] == '%')
+				numchars += ft_print_char('%');
+			i++;
 		}
 		else
-			numchars += ft_putchar_pf(str[i]);
+			numchars += ft_print_char(str[i]);
 	}
 	va_end(args);
 	return (numchars);
-
 }
