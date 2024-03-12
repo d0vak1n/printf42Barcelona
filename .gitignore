@@ -6,4 +6,4 @@ test.c
 *.o
 test.dSYM/
 libft.a
-libprintf.a
+libftprintf.a
