@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramoreno <ramoreno@student.42barcel>       +#+  +:+       +#+        */
+/*   By: ramoreno <ramoreno@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:39:07 by ramoreno          #+#    #+#             */
-/*   Updated: 2024/02/29 12:40:41 by ramoreno         ###   ########.fr       */
+/*   Updated: 2024/03/13 21:56:45 by ramoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static int	_format(char const *str, void *arg)
@@ -22,12 +23,11 @@ static int	_format(char const *str, void *arg)
 		numchars += ft_print_string((char *)arg);
 	if (*str == 'p')
 		numchars += ft_print_pointer(arg);
-
-	/*
 	if (*str == 'd')
-		numchars += ft_print_num((int)arg);
+		numchars += ft_print_num((long)arg);
 	if (*str == 'i')
-		numchars += ft_print_num((int)arg);
+		numchars += ft_print_num((long)arg);
+	/*
 	if (*str == 'u')
 		numchars +=	ft_print_unsigned();
 	if (*str == 'x')

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ramoreno <ramoreno@student.42barcel>       +#+  +:+       +#+         #
+#    By: ramoreno <ramoreno@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:31:29 by ramoreno          #+#    #+#              #
-#    Updated: 2024/02/29 11:37:02 by ramoreno         ###   ########.fr        #
+#    Updated: 2024/03/13 21:51:04 by ramoreno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBFT=libft.a
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror -g
 
-FILES=ft_printf.c ft_print_char.c ft_print_string.c ft_print_pointer.c ft_print_hex.c
+FILES=ft_printf.c ft_print_char.c ft_print_string.c ft_print_pointer.c ft_print_hex.c ft_print_num.c
 LIBFTPATH=./libft
 
 OBJS=$(patsubst %.c, %.o, $(FILES))
