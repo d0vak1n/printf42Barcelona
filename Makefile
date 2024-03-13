@@ -16,31 +16,27 @@ LIBFT=libft.a
 
 ## Compile command
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -g
 
-FILES=ft_printf.c ft_print_char.c ft_print_string.c ft_print_pointer.c
+FILES=ft_printf.c ft_print_char.c ft_print_string.c ft_print_pointer.c ft_print_hex.c
 LIBFTPATH=./libft
 
 OBJS=$(patsubst %.c, %.o, $(FILES))
 
-$(NAME): $(OBJS) Makefile ft_printf.h makelibft
+$(NAME): $(OBJS) Makefile ft_printf.h
+	@cd $(LIBFTPATH) && $(MAKE) && cp -v $(LIBFT) ../$(NAME)
 	@echo "\n📝 Creating library... $(NAME) 📝\n"
 	ar -rvs $@ $(OBJS)
 	@echo "\n📖 $(NAME) created succesfully 📖\n"
 
 all: $(NAME)
 
-makelibft:
-	@make -C $(LIBFTPATH)
-	@cp $(LIBFTPATH)/$(LIBFT) .
-	@mv $(LIBFT) $(NAME)
-
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
 
 test: $(OBJS) test.c $(NAME)
 	@echo "\n ❗️❗️ Compiling all the files... ❗️❗️ \n"
-	$(CC) $(CFLAGS) -g $@.c $(OBJS) $(NAME) -o $@
+	$(CC) $(CFLAGS) $@.c $(OBJS) $(NAME) -o $@
 	@make clean
 	@echo "\n 🐁 Executing test... 🐁 \n"
 	@./$@

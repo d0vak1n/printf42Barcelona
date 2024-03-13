@@ -21,6 +21,7 @@
 int	ft_printf(char const *str, ...);
 int	ft_print_char(char const c);
 int	ft_print_string(char *str);
-int	ft_print_pointer(unsigned long p);
+int	ft_print_pointer(void *p);
+int ft_print_hex(unsigned long long h);
 
 #endif

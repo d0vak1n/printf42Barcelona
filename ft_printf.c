@@ -21,7 +21,7 @@ static int	_format(char const *str, void *arg)
 	if (*str == 's')
 		numchars += ft_print_string((char *)arg);
 	if (*str == 'p')
-		numchars += ft_print_pointer((unsigned long)arg);
+		numchars += ft_print_pointer(arg);
 
 	/*
 	if (*str == 'd')

@@ -11,27 +11,13 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-
-static char	*_create_str(unsigned long p)
+int	ft_print_pointer(void *p)
 {
+	unsigned long	address;
+	int len;
 
+	len = 0;
+	address = (unsigned long)p;
+	len = ft_print_hex(address);
+	return (len);
 }
-
-int	ft_print_pointer(unsigned long p)
-{
-	int	div;
-	int	rest;
-	char *hex;
-
-	hex = "0123456789abcdef";
-
-	if (p < 16)
-	{
-		p /= 16;
-		rest = p % 16;
-		ft_print_pointer(rest);
-	}
-	else
-		ft_print_char(hex[p]);
-}
-
