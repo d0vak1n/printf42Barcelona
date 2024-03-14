@@ -9,7 +9,6 @@
 /*   Updated: 2024/03/13 21:56:45 by ramoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "ft_printf.h"
 
 static int	_format(char const *str, void *arg)

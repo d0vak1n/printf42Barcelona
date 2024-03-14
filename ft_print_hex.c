@@ -36,7 +36,7 @@ static char	*_create_str(unsigned long long p)
 	return (str);
 }
 
-int ft_print_hex(unsigned long long h)
+int	ft_print_hex(unsigned long long h)
 {
 	int				i;
 	char			*hex;

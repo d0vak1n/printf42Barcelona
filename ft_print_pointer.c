@@ -14,7 +14,7 @@
 int	ft_print_pointer(void *p)
 {
 	unsigned long	address;
-	int len;
+	int				len;
 
 	len = 0;
 	address = (unsigned long)p;

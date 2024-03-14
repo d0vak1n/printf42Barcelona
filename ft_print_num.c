@@ -34,8 +34,8 @@ static int	numdigits(int n)
 	return (counter);
 }
 
-int ft_print_num(int n)
+int	ft_print_num(int n)
 {
-    ft_putnbr_fd(n, 1);
-    return (numdigits(n));
+	ft_putnbr_fd(n, 1);
+	return (numdigits(n));
 }
