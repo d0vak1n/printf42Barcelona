@@ -7,3 +7,4 @@ test.c
 test.dSYM/
 libft.a
 libftprintf.a
+ft_printf_test/

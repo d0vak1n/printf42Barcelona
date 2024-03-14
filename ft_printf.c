@@ -17,18 +17,18 @@ static int	_format(char const *str, void *arg)
 
 	numchars = 0;
 	if (*str == 'c')
-		numchars += ft_print_char((long)arg);
+		numchars += ft_print_char((int)arg);
 	if (*str == 's')
 		numchars += ft_print_string((char *)arg);
 	if (*str == 'p')
-		numchars += ft_print_pointer(arg);
+		numchars += ft_print_pointer((unsigned long int)arg);
 	if (*str == 'd')
-		numchars += ft_print_num((long)arg);
+		numchars += ft_print_num((int)arg);
 	if (*str == 'i')
-		numchars += ft_print_num((long)arg);
-	/*
+		numchars += ft_print_num((int)arg);
 	if (*str == 'u')
-		numchars +=	ft_print_unsigned();
+		numchars +=	ft_print_unsigned((unsigned int)arg);
+	/*
 	if (*str == 'x')
 		numchars += ft_print_hex();
 	if (*str == 'X')

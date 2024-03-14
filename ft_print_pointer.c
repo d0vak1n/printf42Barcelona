@@ -11,13 +11,11 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_print_pointer(void *p)
+int	ft_print_pointer(unsigned long int address)
 {
-	unsigned long	address;
-	int				len;
+	int					len;
 
 	len = 0;
-	address = (unsigned long)p;
 	len = ft_print_hex(address);
 	return (len);
 }
