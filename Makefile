@@ -19,7 +19,7 @@ CC=gcc
 CFLAGS=-Wall -Wextra -Werror -g
 
 FILES=ft_printf.c ft_print_char.c ft_print_string.c \
-	ft_print_pointer.c ft_print_hex.c ft_print_num.c \
+	ft_print_pointer.c ft_print_hex_low.c ft_print_num.c \
 	ft_print_unsigned.c
 
 LIBFTPATH=./libft
