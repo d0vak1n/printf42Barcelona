@@ -3,37 +3,36 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ramoreno <ramoreno@student.42barcel>       +#+  +:+       +#+         #
+#    By: ramoreno <ramoreno@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/29 11:31:29 by ramoreno          #+#    #+#              #
-#    Updated: 2024/02/29 11:37:02 by ramoreno         ###   ########.fr        #
+#    Updated: 2024/03/13 21:51:04 by ramoreno         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ## Names
-NAME=libprintf.a
+NAME=libftprintf.a
 LIBFT=libft.a
 
 ## Compile command
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -g
 
-FILES=ft_printf.c ft_putchar_pf.c
+FILES=ft_printf.c ft_print_char.c ft_print_string.c \
+	ft_print_pointer.c ft_print_hex.c ft_print_num.c \
+	ft_print_unsigned.c
+
 LIBFTPATH=./libft
 
 OBJS=$(patsubst %.c, %.o, $(FILES))
 
-$(NAME): $(OBJS) Makefile libprintf.h makelibft
+$(NAME): $(OBJS) Makefile ft_printf.h
+	@cd $(LIBFTPATH) && $(MAKE) && cp -v $(LIBFT) ../$(NAME)
 	@echo "\n📝 Creating library... $(NAME) 📝\n"
-	ar -rvs $@ $<
+	ar -rvs $@ $(OBJS)
 	@echo "\n📖 $(NAME) created succesfully 📖\n"
 
 all: $(NAME)
-
-makelibft:
-	@make -C $(LIBFTPATH)
-	@cp $(LIBFTPATH)/$(LIBFT) .
-	@mv $(LIBFT) $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $<
