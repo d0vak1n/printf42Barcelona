@@ -54,8 +54,7 @@ int	ft_print_hex_low(unsigned long long h)
 		h /= 16;
 		i--;
 	}
-	len = ft_print_string("0x");
-	len += ft_print_string(res);
+	len = ft_print_string(res);
 	free(res);
 	return (len);
 }
