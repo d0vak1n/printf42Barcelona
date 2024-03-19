@@ -15,7 +15,7 @@ static int	_numlen(unsigned long p)
 {
 	int	string_lenght;
 
-	string_lenght = 0;
+	string_lenght = 1;
 	while (p >= 16)
 	{
 		p /= 16;
@@ -38,23 +38,25 @@ static char	*_create_str(unsigned long long p)
 
 int	ft_print_hex(unsigned long long h)
 {
-	int				i;
-	char			*hex;
-	char			*res;
+	int		i;
+	int		len;
+	char	*hex;
+	char	*res;
+
 
 	hex = "0123456789abcdef";
 	res = _create_str(h);
 	if (!res)
 		return (0);
-	i = _numlen(h);
+	i = _numlen(h) - 1;
 	while (i >= 0)
 	{
 		res[i] = hex[h % 16];
 		h /= 16;
 		i--;
 	}
-	ft_print_string("0x");
-	ft_print_string(res);
+	len = ft_print_string("0x");
+	len += ft_print_string(res);
 	free(res);
-	return (ft_strlen(res) + 2);
+	return (len);
 }

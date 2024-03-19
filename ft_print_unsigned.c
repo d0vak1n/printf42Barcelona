@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
+
 static int	_numdigits(unsigned int n)
 {
 	int	counter;

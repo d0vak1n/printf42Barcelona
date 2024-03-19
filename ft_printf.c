@@ -27,14 +27,13 @@ static int	_format(char const *str, void *arg)
 	if (*str == 'i')
 		numchars += ft_print_num((int)arg);
 	if (*str == 'u')
-		numchars +=	ft_print_unsigned((unsigned int)arg);
+		numchars += ft_print_unsigned((unsigned int)arg);
 	/*
 	if (*str == 'x')
 		numchars += ft_print_hex();
 	if (*str == 'X')
 		numchars += ft_print_hex();
 	*/
-
 	return (numchars);
 }
 
