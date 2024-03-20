@@ -32,7 +32,6 @@ static int	_format(char const *str, void *arg)
 		numchars += ft_print_hex_low_or_up((unsigned int)arg, 0);
 	if (*str == 'X')
 		numchars += ft_print_hex_low_or_up((unsigned int)arg, 1);
-
 	return (numchars);
 }
 

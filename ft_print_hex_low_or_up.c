@@ -23,6 +23,7 @@ static int	_numlen(unsigned int h)
 	}
 	return (string_lenght);
 }
+
 static char	*_create_str(unsigned long long p)
 {
 	char	*str;
@@ -34,6 +35,7 @@ static char	*_create_str(unsigned long long p)
 		return (NULL);
 	return (str);
 }
+
 int	ft_print_hex_low_or_up(unsigned int h, int option)
 {
 	int		i;
