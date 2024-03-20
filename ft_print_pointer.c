@@ -17,6 +17,6 @@ int	ft_print_pointer(unsigned long int address)
 
 	len = 0;
 	len = ft_print_string("0x");
-	len += ft_print_hex_low(address);
+	len += ft_print_hex(address);
 	return (len);
 }

@@ -29,11 +29,10 @@ static int	_format(char const *str, void *arg)
 	if (*str == 'u')
 		numchars += ft_print_unsigned((unsigned int)arg);
 	if (*str == 'x')
-		numchars += ft_print_hex_low((unsigned long int)arg);
-	/*
+		numchars += ft_print_hex_low_or_up((unsigned int)arg, 0);
 	if (*str == 'X')
-		numchars += ft_print_hex();
-	*/
+		numchars += ft_print_hex_low_or_up((unsigned int)arg, 1);
+
 	return (numchars);
 }
 
