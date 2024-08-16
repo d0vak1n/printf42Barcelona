@@ -6,9 +6,10 @@
 /*   By: ramoreno <ramoreno@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:39:07 by ramoreno          #+#    #+#             */
-/*   Updated: 2024/03/13 21:56:45 by ramoreno         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:20:54 by ramoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static int	_format(char const *str, void *arg)
@@ -17,21 +18,21 @@ static int	_format(char const *str, void *arg)
 
 	numchars = 0;
 	if (*str == 'c')
-		numchars += ft_print_char((int)arg);
+		numchars += ft_print_char(*(int *)arg);
 	if (*str == 's')
 		numchars += ft_print_string((char *)arg);
 	if (*str == 'p')
 		numchars += ft_print_pointer((unsigned long int)arg);
 	if (*str == 'd')
-		numchars += ft_print_num((int)arg);
+		numchars += ft_print_num(*(int *)arg);
 	if (*str == 'i')
-		numchars += ft_print_num((int)arg);
+		numchars += ft_print_num(*(int *)arg);
 	if (*str == 'u')
-		numchars += ft_print_unsigned((unsigned int)arg);
+		numchars += ft_print_unsigned(*(unsigned int *)arg);
 	if (*str == 'x')
-		numchars += ft_print_hex_low_or_up((unsigned int)arg, 0);
+		numchars += ft_print_hex_low_or_up(*(unsigned int *)arg, 0);
 	if (*str == 'X')
-		numchars += ft_print_hex_low_or_up((unsigned int)arg, 1);
+		numchars += ft_print_hex_low_or_up(*(unsigned int *)arg, 1);
 	return (numchars);
 }
 

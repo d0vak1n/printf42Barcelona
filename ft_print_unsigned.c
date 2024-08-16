@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ramoreno <ramoreno@student.42barcel>       +#+  +:+       +#+        */
+/*   By: ramoreno <ramoreno@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 10:41:58 by ramoreno          #+#    #+#             */
-/*   Updated: 2024/03/14 10:42:16 by ramoreno         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:26:16 by ramoreno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <limits.h>
 #include "ft_printf.h"
 
 static int	_numdigits(unsigned int n)
@@ -20,11 +22,6 @@ static int	_numdigits(unsigned int n)
 	{
 		counter = 10;
 		return (10);
-	}
-	if (n < 0)
-	{
-		n = -n;
-		counter++;
 	}
 	while (n > 9)
 	{
